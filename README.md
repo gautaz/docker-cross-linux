@@ -7,7 +7,7 @@ It roughly goes through the following steps:
 * cross-compile a [Linux kernel](https://www.kernel.org/)
 * cross-compile [BusyBox](https://busybox.net/)
 * add BusyBox in the kernel as an [initramfs](https://www.kernel.org/doc/Documentation/filesystems/ramfs-rootfs-initramfs.txt)
-* provides the kernel image to the board through [TFTP](https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol)
+* provide the kernel image to the board through [TFTP](https://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol)
 
 The base Docker image was initially [Alpine](https://www.alpinelinux.org/) based but was replace by [ArchLinux](https://archlinux.org/) due to [this issue](https://sourceware.org/bugzilla/show_bug.cgi?id=21604).
 
