@@ -25,3 +25,9 @@ The support for these boards [was removed](https://lore.kernel.org/lkml/20211130
 Also few documentation remains related to the YAMON board's ROM monitor:
 * https://www.linux-mips.org/wiki/YAMON
 * https://linuxlink.timesys.com/docs/wiki/engineering/Yamon
+
+Currently I am stuck with the following issue:
+
+![RBTX4938 kernel boot failure](rbtx4938-failure.gif)
+
+Here is the [session transcript](rbtx4938-failure.log).
