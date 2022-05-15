@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+ROOT="$(readlink -f "${1}")"
+find "${ROOT}" -mindepth 1 -exec stat --format '%F*%N*0%a' {} \; | while IFS='*' read type desc perm; do
+case "${type}" in
+	'directory')
+		path="${desc:1:-1}"
+		echo "dir ${path#${ROOT}} $perm 0 0"
+		;;
+	'regular file')
+		path="${desc:1:-1}"
+		echo "file ${path#${ROOT}} ${path} $perm 0 0"
+		;;
+	'symbolic link')
+		quotedtarget="${desc#* -> }"
+		quotedpath="${desc% -> *}"
+		target="${quotedtarget:1:-1}"
+		path="${quotedpath:1:-1}"
+		echo "slink ${path#${ROOT}} ${target} $perm 0 0"
+		;;
+esac
+done

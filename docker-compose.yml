@@ -1,0 +1,19 @@
+services:
+
+  rbtx4938:
+    build:
+      context: .
+      args:
+        UID: ${UID}
+        GID: ${GID}
+        TARGET_SPEC: ./rbtx4938
+        CT_NG_VERSION: 1.25.0
+        CT_NG_TARGET: mips64el-rbtx4938-linux-gnu
+        BUSYBOX_VERSION: 1.35.0
+        LINUX_VERSION: 5.17.7
+        LINUX_ARCH: mips
+      # target: x-kernel
+    # environment:
+      # TERM: ${TERM}
+    # command: ["tail", "-f", "/dev/null"]
+    network_mode: "host"
